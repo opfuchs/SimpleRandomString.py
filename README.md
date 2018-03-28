@@ -10,6 +10,7 @@ __WARNING__: Do not use this in any "real" application with serious crypto needs
 
 `SimpleRandomString.py` simply prints a random ASCII string of length `n`, where `n` is specified by the user by editing the code and replacing `n` in the `print` function (it's really just a big one-liner broken up for readability). This can obviously be quickly modified into a function that returns but does not print such a string, and I intend to include this feature in the future. The user may also choose, depending on their purpose, what *sorts* of ASCII characters they want to allow in generated strings by adding or removing `string.foo` terms from inside `.choice()`.
 
+
 The core point of the tool is that it uses cryptographically secure system CSPRNGs. The regular `random` and things like `np.random` are not designed for cryptographically secure applications (in the case of the latter for example, the purpose is scientific/mathematical computing). `SimpleRandomString.py` uses the system CSPRNG via `random.SystemRandom()`, specifically:
 
 * `CryptGenRandom()` on Windows, which you can read more about [here](https://msdn.microsoft.com/en-us/library/windows/desktop/aa379942(v=vs.85).aspx) and here.[1][2]
@@ -18,3 +19,8 @@ The core point of the tool is that it uses cryptographically secure system CSPRN
 [1]Yosifovich, P. et al. 2017. *Windows Internals 7th ed. Part 1*. Microsoft Press.
 
 [2]Hart, J.M. 2010. *Windows System Programming 4th ed.* Addison-Wesley.
+
+## TODO
+
+1. Incorporate some functionality from `secrets`
+2. Make this a proper command line application, e.g. `SimpleRandomString.py -a -v 32` rather than just a one-liner the user has to edit.
