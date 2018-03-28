@@ -13,7 +13,8 @@ __WARNING__: Do not use this in any "real" application with serious crypto needs
 The core point of the tool is that it uses cryptographically secure system CSPRNGs. The regular `random` and things like `np.random` are not designed for cryptographically secure applications (in the case of the latter for example, the purpose is scientific/mathematical computing). `SimpleRandomString.py` uses the system CSPRNG via `random.SystemRandom()`, specifically:
 
 * `CryptGenRandom()` on Windows, which you can read more about [here](https://msdn.microsoft.com/en-us/library/windows/desktop/aa379942(v=vs.85).aspx) and here.[1][2]
-* `/dev/urandom/` on *nix-like systems. This is not intended to be an applied cryptography lesson, but if you want to know why `/dev/urandom/` is a better source of randomness on *nix, see [here](https://www.2uo.de/myths-about-urandom/). tl;dr, neither is "true randomness" (we are dealing with CS *P* RNGS) after all, the difference lies in blocking behavior.
+* `/dev/urandom/` on *nix-like systems. This is not intended to be an applied cryptography lesson, but if you want to know why `/dev/urandom/` is a better source of randomness in cryptographic scenarios than `/dev/random` on *nix, see [here](https://www.2uo.de/myths-about-urandom/). tl;dr, neither is "true randomness" (we are dealing with CS *P* RNGS) after all, the difference lies in blocking behavior.
 
 [1]Yosifovich, P. et al. 2017. *Windows Internals 7th ed. Part 1*. Microsoft Press.
+
 [2]Hart, J.M. 2010. *Windows System Programming 4th ed.* Addison-Wesley.
