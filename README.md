@@ -1,10 +1,10 @@
 # SimpleRandomString.py
 
-## v0.01
+## v0.02
 
-Exactly what it says on the tin. This is a simple python script (barely even a script) that generates and prints a random ASCII string of the desired length. This length is currently specified by simply setting the value `n` in the actual code.
+Exactly what it says on the tin. This is a simple python script (barely even a script) that generates and prints a random ASCII string of the desired length using CSPRNGs. This length is currently specified by simply setting the value `n` in the actual code.
 
-__WARNING__: Do not use this in any "real" application with serious crypto needs. "Don't roll your own crypto" as they say. There are plenty of libraries designed and vetted by actual crypto experts for use in important, complicated things. This is simply a little tool I use for my own convenience that I thought I'd share. Use at your own risk.
+__WARNING__: **DO NOT USE IN PRODUCTION**. "Don't roll your own crypto" as they say. There are plenty of libraries designed and vetted by actual crypto experts for use in important, complicated things. This is simply a little tool that was a student project from years ago.
 
 ## Description and Usage
 
